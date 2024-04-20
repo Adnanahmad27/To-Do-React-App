@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
+import ToggleStatus from './components/ToggleStatus';
 
-function App() {
+function App(props) {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Todo list</h1>
       </header>
+      <main>
+        <section>
+          <Todos/>
+        </section>
+        <section>
+          <AddTodo/>
+        </section>
+        <section>
+          <p className="status_heading">Track tasks by status</p>
+          <ToggleStatus/>
+        </section>
+      </main>
     </div>
   );
 }
 
 export default App;
+  
